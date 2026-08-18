@@ -1,0 +1,81 @@
+audio:
+  sample_rate: 16000
+  max_duration_sec: 30
+  normalize:
+    enabled: true
+
+text:
+  allowed_punctuations:
+    - "("
+    - ")"
+    - ":"
+    - ";"
+    - ","
+    - "."
+    - "!"
+    - "?"
+    - "'"
+    - '"'
+    - "/"
+    - "%"
+
+thresholds:
+  wer: 0.05
+
+stages:
+  enabled:
+    validate: true
+    transcribe: true
+    score_wer: true
+    filter: true
+    punc_cap: true
+    num2word: true
+    align: true
+    finalize: true
+
+asr:
+  primary:
+    type: parakeet_nemo
+    description: "Primary ASR using nvidia Parakeet-CTC-0.6B Vietnamese (commercially licensed)."
+    model_id_or_path: "nvidia/parakeet-ctc-0.6b-Vietnamese"
+    device: "cuda:0"
+    batch_size: 4
+  verifier:
+    type: phowhisper_ctranslate2
+    description: "PhoWhisper-large verifier in CTranslate2 format for WER scoring."
+    model_dir: "checkpoints/phowhisper-large-ctranslate"
+    device: "cuda"
+    batch_size: 16
+    chunk_size: 100
+    vad_filter: true
+    language: "vi"
+    threads: 8
+    compute_type: "float16"
+
+punc_cap:
+  drop_on_mismatch: true
+  model:
+    type: seq2seq
+    description: "Fine-tuned BARTpho punctuation and capitalization checkpoint."
+    model_id_or_path: "checkpoints/bartpho-punc-cap"
+    device: "cuda:0"
+    num_beams: 5
+    max_length: 1024
+
+num2word:
+  model:
+    type: seq2seq
+    description: "Vietnamese text-normalization checkpoint for converting digits to spoken-word form."
+    model_id_or_path: "thivux/PhoTextNormalization"
+    device: "cuda:0"
+    num_beams: 5
+    max_length: 1024
+
+alignment:
+  backend:
+    type: parakeet_nemo_align
+    description: "Forced CTC alignment using nvidia Parakeet-CTC-0.6B Vietnamese."
+    model_id_or_path: "nvidia/parakeet-ctc-0.6b-Vietnamese"
+    language: "vi"
+    device: "cuda:0"
+    sample_rate: 16000

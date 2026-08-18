@@ -1,0 +1,16 @@
+--index-url https://download.pytorch.org/whl/cu124
+--extra-index-url https://pypi.org/simple
+
+torch==2.6.0
+torchaudio==2.6.0
+chunkformer
+nemo_toolkit['asr']
+ctranslate2
+whisperx
+whisper-ctranslate2
+transformers>=4.40
+sentencepiece>=0.1.99
+pydub>=0.25
+librosa>=0.10
+pandas>=2.0
+PyYAML>=6.0

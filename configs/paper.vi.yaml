@@ -1,0 +1,86 @@
+audio:
+  sample_rate: 16000
+  max_duration_sec: 30
+  normalize:
+    enabled: true
+
+text:
+  allowed_punctuations:
+    - "("
+    - ")"
+    - ":"
+    - ";"
+    - ","
+    - "."
+    - "!"
+    - "?"
+    - "'"
+    - '"'
+    - "/"
+    - "%"
+
+thresholds:
+  wer: 0.05
+
+stages:
+  enabled:
+    validate: true
+    transcribe: true
+    score_wer: true
+    filter: true
+    punc_cap: true
+    num2word: true
+    align: true
+    finalize: true
+
+asr:
+  primary:
+    type: chunkformer
+    description: "Primary ASR for transcriptless rows using ChunkFormer-large-vie."
+    model_id_or_path: "khanhld/chunkformer-ctc-large-vie"
+    device: "cuda:0"
+    batch_size: 8
+    chunk_size: 64
+    left_context_size: 128
+    right_context_size: 128
+    total_batch_duration: 14400
+    return_timestamps: false
+  verifier:
+    type: phowhisper_ctranslate2
+    description: "PhoWhisper-large verifier in CTranslate2 format for WER scoring."
+    model_dir: "checkpoints/phowhisper-large-ctranslate"
+    device: "cuda"
+    batch_size: 16
+    chunk_size: 100
+    vad_filter: true
+    language: "vi"
+    threads: 8
+    compute_type: "float16"
+
+punc_cap:
+  drop_on_mismatch: true
+  model:
+    type: seq2seq
+    description: "Fine-tuned BARTpho punctuation and capitalization checkpoint."
+    model_id_or_path: "checkpoints/bartpho-punc-cap"
+    device: "cuda:0"
+    num_beams: 5
+    max_length: 1024
+
+num2word:
+  model:
+    type: seq2seq
+    description: "Vietnamese text-normalization checkpoint for converting digits to spoken-word form."
+    model_id_or_path: "thivux/PhoTextNormalization"
+    device: "cuda:0"
+    num_beams: 5
+    max_length: 1024
+
+alignment:
+  backend:
+    type: whisperx_align
+    description: "WhisperX alignment using the Vietnamese wav2vec2 alignment model."
+    language: "vi"
+    align_model_id: "khanhld/wav2vec2-base-vietnamese-160h"
+    device: "cpu"
+    sample_rate: 16000

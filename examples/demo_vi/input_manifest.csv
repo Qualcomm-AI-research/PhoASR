@@ -1,0 +1,21 @@
+sample_id,audio_path,transcript,dataset_name
+sample_001,audio/01.m4a,"năm 2023 việt nam xuất khẩu hơn 8,3 triệu tấn gạo tăng 16% so với năm trước giá gạo trung bình đạt khoảng 575 đô la một tấn mang về tổng kim ngạch gần 4,8 tỉ đô la cho ngành lúa gạo cả nước",source_a
+sample_002,audio/02.m4a,"căn hộ 2 phòng ngủ diện tích 65 mét vuông giá 1,5 tỉ đồng",source_b
+sample_003,audio/03.m4a,để làm bánh mì tại nhà cần chuẩn bị 500 gam bột mì 10 gam đường và 8 gam muối,source_b
+sample_004,audio/04.m4a,chuyến bay VN215 khởi hành lúc 14 giờ 30 từ sân bay tân sơn nhất dự kiến hạ cánh tại nội bài lúc 16 giờ 45 tổng thời gian bay khoảng 2 tiếng 15 phút,source_c
+sample_005,audio/05.m4a,"với giá chỉ 3,5 triệu đồng chiếc điện thoại này có màn hình 6,7 inch pin 5000 mah và bộ nhớ 128 gb",source_c
+sample_006,audio/06.m4a,bác sĩ nói với tôi anh cần nghỉ ngơi ít nhất một tuần tránh vận động mạnh và nhớ uống thuốc đúng giờ tôi hỏi lại vậy khi nào tôi có thể đi làm trở lại,source_d
+sample_007,audio/07.m4a,chiều nay trời mưa to nên đường phố bị ngập nhiều chỗ,source_d
+sample_008,audio/08.m4a,theo quy định mới mới mới học sinh sinh tiểu học học sẽ được đánh giá theo ba ba ba mức hoàn thành xuất sắc hoàn thành tốt tốt và và cần cố gắng thêm thêm giáo viên viên không chấm điểm số mà viết viết nhận xét cụ thể cho từng môn học giúp phụ huynh hiểu rõ hơn hơn về năng lực của con em mình mình,source_e
+sample_009,audio/09.m4a,ủa sao hôm nay quán đông dữ vậy chắc có chương trình khuyến mãi gì đó,source_e
+sample_010,audio/10.m4a,mỗi sáng sớm ông tôi đều ra bờ hồ tập thể dục rồi ghé quán quen uống một ly cà phê đen đọc báo xong mới về nhà ăn sáng cùng gia đình,source_f
+sample_011,audio/11.m4a,,source_g
+sample_012,audio/12.m4a,,source_g
+sample_013,audio/13.m4a,,source_g
+sample_014,audio/14.m4a,,source_g
+sample_015,audio/15.m4a,,source_g
+sample_016,audio/16.m4a,chính phủ vừa ban hành nghị quyết số 54 về quy hoạch và khai thác tài nguyên trong các khu chế xuất có hiệu lực từ ngày 1 tháng 7 năm 2024,source_h
+sample_017,audio/17.m4a,giáo sư trần văn minh tại đại học khoa học tự nhiên hà nội vừa công bố nghiên cứu mới về vật liệu nano ứng dụng trong y sinh học,source_h
+sample_018,audio/18.m4a,cuộc họp được dời sang thứ 5 ngày 12 tháng 3,source_h
+sample_019,audio/19.m4a,theo thống kê của bộ y tế trong quý 1 năm 2024 cả nước ghi nhận hơn 15.000 ca sốt xuất huyết giảm 32% so với cùng kỳ năm ngoái số ca bệnh vẫn ở mức cao với hơn 4.200 ca chiếm gần 28% tổng số ca toàn quốc,source_h
+sample_020,audio/20.m4a,doanh thu quán cà phê tháng này đạt 85 triệu đồng tăng 20% so với tháng trước nhờ chương trình mua 1 tặng 1 vào các ngày thứ 3 và thứ 5 hàng tuần,source_h
